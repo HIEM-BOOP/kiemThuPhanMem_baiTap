@@ -128,10 +128,10 @@ let coTonTai = (s1, s2) => {
 
     // return ketQua ;   
 
-    return !ketQua ? "Không tồn tại" : "Có tồn tại";
+    return ketQua 
 }
 
-showLog(coTonTai("Hiêm", "kiều"))
+showLog(coTonTai("Hiêm", "Hiêm"))
 
 
 let doDaiChuoi = (M) => {
@@ -143,15 +143,10 @@ let doDaiChuoi = (M) => {
 
 let catChuoi = (M) => {
     var cat = M.substring(1, 3);
-  
-  
     return cat;
   }
 
   let kiemTra = (n1,n2) =>{
     var kiem = n1.includes(n2);
-  
     return kiem;
-  
-  
   }  
