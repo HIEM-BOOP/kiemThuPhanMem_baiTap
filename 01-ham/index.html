@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="https://github.com/hohieuit/javascript-coban/blob/master/de%20bai/1_function.txt">
+    <script src="/01-ham/javascript.js"></script>
+    <title>Bài tập hàm</title>
+</head>
+
+<body>
+    <div class="baiTap">
+        <div id="bai1">
+
+        </div>
+    </div>
+    <script>
+        var s1 = "chuổi số H"
+        var s2 = "chuổi số 2 i"
+        var s3 = "chuổi số 3 ê"
+        var s4 = "chuổi số 4 m"
+        var s5 = "chuổi số H "
+
+        var s12 = noiChuoi(s1, s2);
+        var s123 = noiChuoi(s12, s3);
+        var s45 = noiChuoi(s4, s5);
+        var s12345 = noiChuoi(s123, s45)
+
+        var s = s12345;
+
+        showLog(s12);
+        showLog(s123);
+        showLog(s45);
+        showLog(s12345);
+
+
+
+
+
+        var HTMLKetQua = "";
+
+        // Bài 1: Tính tổng 2 số 
+
+        let html = `<p>Bài 1 : Tổng 2 số 3 và 2 là : ${tong(3,2)}</p>
+                    <p>Bài 2 : Hiệu 2 số 3 và 2 là : ${hieu(3,2)}</p>
+                    <p>Bài 3 : Tích hai số 3 và 3 là : ${tich(3,3)}</p>
+                    <p>Bài 4 : Chia hai số 12 và 4 là : ${chia(12,4)}</p>
+                    <p>Bài 5 : Sử dụng hàm  chia để tính n2 = 0 : ${chia(12,0)}</p>
+                    <p>Bài 6 : Sử dụng hàm chia để tính n1 = 0 : ${chia(0,12)}</p>
+                    <p>Bài 7 : Bình phương 2 là ${binhPhuong(2)} và 4 là : ${binhPhuong(4)}</p>
+                    <p>Bài 8 : Tìm số lớn nhất giữa 4 và 10 là ${max(4,10)}</p>
+                    <p>Bài 9 : Tìm số lớn nhỏ giữa 4 và 10 là ${min(4,10)}</p>
+                    <p>Bài 10 : Tính giá trị trung bình của 2 số 3 và 7 là ${trungBinh(3,7)} </p>
+                    <p>Bài 11 : Tính số dư khi 6 chia cho 2 là ${chialaydu(6,2)}</p>
+                    <p>Bài 12 : Tính số dư khi 2 chia cho 6 là ${chialaydu(2,6)}</p>
+                    <p>Bài 13 : kiểm tra xem 9 có chia hết cho 3 không ? ${coChiaHet(6,3)}</p>
+                    <p>Bài 14 : kiểm tra xem 3 có chia hết cho 9 không ? ${coChiaHet(2,6)}</p>
+                    <p>Bài 15 : Tính chu vi và diện tích một hình chữ nhật n1 là 6 n2 là 8? Chu Vi là : ${chuViChuNhat(6,8)} Diện tích là : ${dienTichChuNhat(6,8)} </p>
+                    <p>Bài 16 : Tính chu vi và diện tích một hình tròn có bán kính là 3 , Chu vi là ${chuViHinhTron(3)} Diện tích là ${dienTichHinhTron(3)}</p>
+                    <p>Bài 17 : Tính chu vi và diện tích một hình tròn có bán kính là 6 , Chu vi là ${chuViHinhTron(6)} Diện tích là ${dienTichHinhTron(6)}</p>
+                    <p>Chuỗi </p>
+                    <p>Gộp năm chuổi :  ${noiChuoi(s)} </p>
+                    <p>In Hoa s1 : ${inHoa(s1)} </p>
+
+                    <p>In Hoa s2 : ${inHoa(s2)} </p>
+
+                    <p>In Hoa s3 : ${inHoa(s3)} </p>
+
+                    <p>In Hoa s4 : ${inHoa(s4)} </p>
+
+                    <p>In Hoa s5 : ${inHoa(s5)} </p>
+
+                    <p>In Hoa S : ${inHoa(s)} </p>
+
+                    <p>Kiểm tra có tồn tại của chuổi này trong chuổi kia không ?
+                        s2 trong s1 là
+                        ${coTonTai(s2,s1)}
+                        </p>
+                    <p>Độ dài chuổi s1 : ${doDaiChuoi(s1)}</p>
+                    <p>Độ dài chuổi s2 : ${doDaiChuoi(s2)}</p>
+                    <p>Độ dài chuổi s3 : ${doDaiChuoi(s3)}</p>
+                    <p>Độ dài chuổi s4 : ${doDaiChuoi(s4)}</p>
+                    <p>Độ dài chuổi s5 : ${doDaiChuoi(s5)}</p>
+                    
+                    <p>Cắt chuổi s1 từ vị trí 1 đến 3 ${catChuoi(s1)}</p>
+                    <p>Cắt chuổi s2 từ vị trí 1 đến 3 ${catChuoi(s2)}</p>
+                    <p>Cắt chuổi s3 từ vị trí 1 đến 3 ${catChuoi(s3)}</p>
+                    <p>Cắt chuổi s4 từ vị trí 1 đến 3 ${catChuoi(s4)}</p>
+                    <p>Cắt chuổi s5 từ vị trí 1 đến 3 ${catChuoi(s5)}</p>
+
+                    <p> Kiểm tra s1 có tồn tại trong s5 ? Trả lời ${!kiemTra(s5,s1) === true ? "Không " : "Có"}
+                        `
+                    ;
+
+        HTMLKetQua = HTMLKetQua + html;
+
+        document.getElementById("bai1").innerHTML = HTMLKetQua;
+
+        // Bài 2
+    </script>
+</body>
+
+</html>
