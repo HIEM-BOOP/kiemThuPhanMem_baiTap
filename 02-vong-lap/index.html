@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/02-vong-lap/js/js.js"></script>
+    <title>Vòng lặp</title>
+</head>
+
+<body>
+    <div id="container">
+
+    </div>
+    <script>
+        var HTMLKetQua = ""
+        let html =
+            `<p>Bài1: ${showMessage("Tôi rất thông minh",10)}</p>
+        <p>Bài1: ${sum(100)}</p>
+        <p>Bài2: ${sumOdd(1,4)}</p>
+        <p>Bài3: ${listOdds(100)}</p>
+        <p>Bài4: ${listOdd(1005,57)} </p>
+        <p>Bài5: ${isPrime(12)} </p>
+        <p>Bài6: ${listPrime(12)} </p>
+
+
+        
+        `
+        HTMLKetQua += html;
+        document.getElementById("container").innerHTML = HTMLKetQua
+    </script>
+</body>
+
+</html>
