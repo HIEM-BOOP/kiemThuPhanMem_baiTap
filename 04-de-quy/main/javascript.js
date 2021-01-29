@@ -70,4 +70,7 @@ let bai11 = (n) => {
     }
 }
 
+
+
+
 console.log(bai11(5))
